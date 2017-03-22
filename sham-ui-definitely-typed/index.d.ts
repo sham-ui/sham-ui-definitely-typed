@@ -404,6 +404,11 @@ declare namespace 'sham-ui' {
          * Отрисовать виджет в контейнер
          */
         render(): { container?: Node, html?: string };
+
+        /**
+         * Query current container by this.containerSelector and save node as this.container
+         */
+        protected resolveContainer();
     }
 
     /**
