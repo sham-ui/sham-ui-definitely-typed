@@ -7,6 +7,8 @@ class Deferred {
     reject();
 }
 
+type StringFunction = () => any;
+
 /**
  * Default options
  */
@@ -388,7 +390,7 @@ declare namespace 'sham-ui' {
         /**
          * Функция возвращающая html для отрисовки
          */
-        html(): string;
+        html: string|StringFunction;
 
         /**
          * Добавить обработчики событий
