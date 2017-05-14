@@ -346,7 +346,7 @@ declare namespace 'sham-ui' {
         /**
          * Container of this widget
          */
-        container: null|Node
+        container: null|Element
 
         /**
          * Сначала биндим обработчики событий, потом отрисовываем
