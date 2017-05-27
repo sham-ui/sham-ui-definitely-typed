@@ -17,7 +17,7 @@ interface Options {
      * Сначала биндим обработчики событий, потом отрисовываем
      * @default [ "bindEvents", "render" ]
      */
-    actionSequence: string[]
+    actionSequence: string[];
     /**
      * Тип виджета
      */
@@ -163,7 +163,7 @@ declare namespace 'sham-ui' {
          * Hook for process error
          */
         handleException( exception: Object );
-    };
+    }
 
     /**
      * Класс основного конечного атомата
@@ -273,7 +273,7 @@ declare namespace 'sham-ui' {
              * Разрегистрировать виджет
              * @param widgetId Идентификатор виджета, который нужно разрегистрировать
              */
-            unregister( widgetId: string )
+            unregister( widgetId: string );
         }
 
         /**
@@ -346,46 +346,46 @@ declare namespace 'sham-ui' {
         /**
          * Container of this widget
          */
-        container: null|Element
+        container: null|Element;
 
         /**
          * Сначала биндим обработчики событий, потом отрисовываем
          * @default [ "bindEvents", "render" ]
          */
-        actionSequence: string[]
+        actionSequence: string[];
 
         /**
          * Текущий инстанс библиотеки
          */
-        UI: ShamUI
+        UI: ShamUI;
 
         /**
          * Тип виджета
          */
-        types: string[]
+        types: string[];
 
         /**
          * Если биндим обработчики событий после отрисовки, то нужно ли перебиндиивать их
          * после каждой отрисовки
          * @default true
          */
-        bindOnce: boolean
+        bindOnce: boolean;
 
         /**
          * Массив виджетов, которые нужно отрисовать перед тем, как отрисовывать этот виджет
          */
-        renderDependence: string[]
+        renderDependence: string[];
 
         /**
          * Нужно ли кэшировать родительский элемент для контейнера
          * @default false
          */
-        cacheParentContainer: boolean
+        cacheParentContainer: boolean;
 
         /**
          * Опции виджета. Переопределяют опции по-умолчанию
          */
-        options: Options
+        options: Options;
 
         /**
          * Функция возвращающая html для отрисовки
