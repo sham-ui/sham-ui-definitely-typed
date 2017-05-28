@@ -44,6 +44,18 @@ interface Options {
 
 declare namespace 'sham-ui' {
 
+    class assert {
+        /**
+         * Error assertion
+         */
+        static error( message: string, condition: boolean );
+
+        /**
+         * Warning assertion
+         */
+        static warn( message: string, condition: boolean );
+    }
+
     /**
      Simple DI implementation
      **/
@@ -63,6 +75,11 @@ declare namespace 'sham-ui' {
      * Inject item by name
      */
     function inject( target: any, key: string, descriptor:any );
+
+    /**
+     * Decorator for auto bind & unbind events
+     */
+    function handler( eventType: string, selector?:string );
 
     /**
      * Finite State Machine
@@ -115,12 +132,12 @@ declare namespace 'sham-ui' {
         /**
          * Subscribe listener to event
          */
-        on( eventName: string, callback: Function ): { eventName: string, callback: Function, off: Function };
+        on( eventName: string, callback: Function ): { eventName: string, callback: Function, callbackID: number, off: Function };
 
         /**
          * Un-subscribe listener
          */
-        off( eventName?: string, callback ?: Function );
+        off( eventName?: string, callback ?: Function, callbackID ?: number );
 
         /**
          * Subscribe once event listener
