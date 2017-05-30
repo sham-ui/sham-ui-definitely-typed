@@ -1,3 +1,4 @@
+import {Widget} from "sham-ui";
 /**
  * Deferred на нативных Promise
  */
@@ -43,6 +44,17 @@ interface Options {
 }
 
 declare namespace 'sham-ui' {
+
+    class OptionsConflictResolver {
+        abstract predicate( widget: Widget, options: Options ): boolean;
+        abstract resolve( options: Options )
+    }
+
+    class OptionsConflictResolverManager {
+        resolvers: Set<OptionsConflictResolver>;
+        registry( resolver: OptionsConflictResolver ): OptionsConflictResolver;
+        resolve( widget: Widget, options: Options );
+    }
 
     class assert {
         /**
@@ -375,6 +387,8 @@ declare namespace 'sham-ui' {
          * Текущий инстанс библиотеки
          */
         UI: ShamUI;
+
+        conflictResolver: OptionsConflictResolverManager;
 
         /**
          * Тип виджета
