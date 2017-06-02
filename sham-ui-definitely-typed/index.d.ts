@@ -421,7 +421,7 @@ declare namespace 'sham-ui' {
         /**
          * Функция возвращающая html для отрисовки
          */
-        html: string|StringFunction;
+        html: StringFunction;
 
         /**
          * Добавить обработчики событий
