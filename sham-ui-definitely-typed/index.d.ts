@@ -1,4 +1,3 @@
-import {Widget} from "sham-ui";
 /**
  * Deferred на нативных Promise
  */
